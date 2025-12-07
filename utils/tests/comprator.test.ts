@@ -1,24 +1,8 @@
-import Comparator from "../comparator";
+import Comparator from "../comparator.util";
 
-/**
- * Unit tests for Comparator<number> class.
- *
- * Tests all main comparison methods: defaultCompare, equal, lessThan, greaterThan,
- * lessThanOrEqual, greaterThanOrEqual, reverse, and constructor behavior.
- */
 describe("Comparator<number> - basic comparison methods", () => {
   const comparator = new Comparator<number>();
 
-  // -------------------------------
-  // defaultCompare tests
-  // -------------------------------
-
-  /**
-   * Tests defaultCompare() behavior:
-   * - returns 0 when numbers are equal
-   * - returns -1 when first number is less than second
-   * - returns 1 when first number is greater than second
-   */
   test("defaultCompare returns 0 when numbers are equal", () => {
     expect(comparator.defaultCompare(5, 5)).toBe(0);
   });
@@ -31,15 +15,6 @@ describe("Comparator<number> - basic comparison methods", () => {
     expect(comparator.defaultCompare(7, 3)).toBe(1);
   });
 
-  // -------------------------------
-  // equal() tests
-  // -------------------------------
-
-  /**
-   * Tests equal() method
-   * - should return true when numbers are equal
-   * - should return false when numbers are different
-   */
   test("equal() returns true when numbers are equal", () => {
     expect(comparator.equal(5, 5)).toBe(true);
   });
@@ -48,15 +23,6 @@ describe("Comparator<number> - basic comparison methods", () => {
     expect(comparator.equal(5, 3)).toBe(false);
   });
 
-  // -------------------------------
-  // lessThan() tests
-  // -------------------------------
-
-  /**
-   * Tests lessThan() method
-   * - should return true if first number is less than second
-   * - false if first number is greater or equal
-   */
   test("lessThan() returns true when first < second", () => {
     expect(comparator.lessThan(2, 5)).toBe(true);
   });
@@ -69,15 +35,6 @@ describe("Comparator<number> - basic comparison methods", () => {
     expect(comparator.lessThan(5, 5)).toBe(false);
   });
 
-  // -------------------------------
-  // greaterThan() tests
-  // -------------------------------
-
-  /**
-   * Tests greaterThan() method
-   * - should return true if first number is greater than second
-   * - false if first number is less or equal
-   */
   test("greaterThan() returns true when first > second", () => {
     expect(comparator.greaterThan(5, 2)).toBe(true);
   });
@@ -90,15 +47,6 @@ describe("Comparator<number> - basic comparison methods", () => {
     expect(comparator.greaterThan(5, 5)).toBe(false);
   });
 
-  // -------------------------------
-  // lessThanOrEqual() tests
-  // -------------------------------
-
-  /**
-   * Tests lessThanOrEqual() method
-   * - true if first number is less than or equal to second
-   * - false if first number is greater
-   */
   test("lessThanOrEqual() returns true when first < second", () => {
     expect(comparator.lessThanOrEqual(2, 5)).toBe(true);
   });
@@ -111,15 +59,6 @@ describe("Comparator<number> - basic comparison methods", () => {
     expect(comparator.lessThanOrEqual(5, 2)).toBe(false);
   });
 
-  // -------------------------------
-  // greaterThanOrEqual() tests
-  // -------------------------------
-
-  /**
-   * Tests greaterThanOrEqual() method
-   * - true if first number is greater than or equal to second
-   * - false if first number is less
-   */
   test("greaterThanOrEqual() returns true when first > second", () => {
     expect(comparator.greaterThanOrEqual(5, 2)).toBe(true);
   });
